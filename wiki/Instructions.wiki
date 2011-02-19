@@ -31,7 +31,8 @@ Examples:
 
 The application will try to find a match on theTvDb.com and rename the file as follows:
 
+{{{
 MOVE_FOLDER\Series Name\Season XX\Series Name - SXXEXX - Episode Name.extension
-
+}}}
 
 The SeriesId is useful if the application can't reliably choose the correct series from theTvDb.com.
