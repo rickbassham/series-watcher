@@ -26,8 +26,8 @@ series-watcher supports the following formats for TV shows in the WATCH_FOLDER:
 Where `<SeriesId>` is the theTvDb.com series ID, `<Season>` is a number, `<Episode>` is a number, and `<Date>` is in the following format dd/MM/yy or dd.mm.yy or yyyy.mm.dd or yyyy/mm/dd
 
 Examples:
-71256\The.Daily.Show.2011.02.17.blah blah blah.avi
-Smallville.S10E14.720p.HDTV.blah blah blah.mkv
+  * 71256\The.Daily.Show.2011.02.17.blah blah blah.avi
+  * Smallville.S10E14.720p.HDTV.blah blah blah.mkv
 
 The application will try to find a match on theTvDb.com and rename the file as follows:
 
