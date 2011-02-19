@@ -17,13 +17,13 @@ WATCH_FOLDER = the folder you want series-watcher to watch (should probably only
 MOVE_FOLDER = the root folder you want to move your files to after renaming.
 
 series-watcher supports the following formats for TV shows in the WATCH_FOLDER:
-
+{{{
 <SeriesId>\<Title> S<Season>E<Episode>
 <Title> S<Season>E<Episode>
 <SeriesId>\<Title> <Date>
 <Title> <Date>
-
-Where <SeriesId> is the theTvDb.com series ID, <Season> is a number, <Episode> is a number, and <Date> is in the following format dd/MM/yy or dd.mm.yy or yyyy.mm.dd or yyyy/mm/dd
+}}}
+Where `<SeriesId>` is the theTvDb.com series ID, `<Season>` is a number, `<Episode>` is a number, and `<Date>` is in the following format dd/MM/yy or dd.mm.yy or yyyy.mm.dd or yyyy/mm/dd
 
 Examples:
 71256\The.Daily.Show.2011.02.17.blah blah blah.avi
