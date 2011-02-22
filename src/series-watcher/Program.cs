@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using theTvDb;
 using System.IO;
+using System.Diagnostics;
 
 namespace SeriesWatcher
 {
@@ -12,6 +13,8 @@ namespace SeriesWatcher
     {
         static readonly string MOVE_FOLDER = System.Configuration.ConfigurationManager.AppSettings["MOVE_FOLDER"];
         static readonly string WATCH_FOLDER = System.Configuration.ConfigurationManager.AppSettings["WATCH_FOLDER"];
+        static readonly string MKVMERGE = System.Configuration.ConfigurationManager.AppSettings["MKVMERGE"];
+        static readonly bool CONVERT_TO_MKV = Convert.ToBoolean(System.Configuration.ConfigurationManager.AppSettings["CONVERT_TO_MKV"]);
 
         static RegexOptions options = RegexOptions.Compiled | RegexOptions.CultureInvariant | RegexOptions.ExplicitCapture | RegexOptions.IgnoreCase | RegexOptions.IgnorePatternWhitespace;
 
@@ -35,7 +38,6 @@ namespace SeriesWatcher
             {
                 foreach (string file in Directory.GetFiles(folder, "*", SearchOption.AllDirectories))
                 {
-
                     bool matchFound = false;
 
                     foreach (Regex r in regularExpressions)
@@ -110,8 +112,7 @@ namespace SeriesWatcher
                                     e.SeasonNumber.Value.ToString("00"),
                                     e.EpisodeNumber.Value.ToString("00"),
                                     episodeName,
-                                    Path.GetExtension(file)));
-
+                                    CONVERT_TO_MKV ? ".mkv" : Path.GetExtension(file)));
 
                                 if (!Directory.Exists(Path.GetDirectoryName(newPath)))
                                 {
@@ -122,7 +123,18 @@ namespace SeriesWatcher
 
                                 if (!File.Exists(newPath))
                                 {
-                                    File.Move(file, newPath);
+                                    if (CONVERT_TO_MKV)
+                                    {
+                                        Process p = Process.Start(MKVMERGE, string.Format("--output \"{0}\" \"{1}\"", newPath, file));
+
+                                        p.WaitForExit();
+
+                                        File.Delete(file);
+                                    }
+                                    else
+                                    {
+                                        File.Move(file, newPath);
+                                    }
                                 }
                             }
                         }
