@@ -3,7 +3,7 @@
 
 = Introduction =
 
-This program watches a folder for new files, uses theTvDb.com to lookup information about them, and renames the files to a destination folder of your choice.
+This program watches a folder for new files, uses [http://www.thetvdb.com TheTVDB.com] to lookup information about them, and renames the files to a destination folder of your choice.
 
 
 = Details =
@@ -25,16 +25,16 @@ series-watcher supports the following formats for TV shows in the WATCH_FOLDER:
 <SeriesId>\<Title> <Date>
 <Title> <Date>
 }}}
-Where `<SeriesId>` is the theTvDb.com series ID, `<Season>` is a number, `<Episode>` is a number, and `<Date>` is in the following format dd/MM/yy or dd.mm.yy or yyyy.mm.dd or yyyy/mm/dd
+Where `<SeriesId>` is the [http://www.thetvdb.com TheTVDB.com] series ID, `<Season>` is a number, `<Episode>` is a number, and `<Date>` is in the following format dd/MM/yy or dd.mm.yy or yyyy.mm.dd or yyyy/mm/dd
 
 Examples:
   * 71256\The.Daily.Show.2011.02.17.blah blah blah.avi
   * Smallville.S10E14.720p.HDTV.blah blah blah.mkv
 
-The application will try to find a match on theTvDb.com and rename the file as follows:
+The application will try to find a match on [http://www.thetvdb.com TheTVDB.com] and rename the file as follows:
 
 {{{
 MOVE_FOLDER\Series Name\Season XX\Series Name - SXXEXX - Episode Name.extension
 }}}
 
-The SeriesId is useful if the application can't reliably choose the correct series from theTvDb.com.
+The SeriesId is useful if the application can't reliably choose the correct series from [http://www.thetvdb.com TheTVDB.com].
