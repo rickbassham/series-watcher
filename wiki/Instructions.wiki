@@ -12,9 +12,11 @@ To build, you will need Visual C# 2010 Express edition (available for free from 
 
 To run, edit the values of the series-watcher.exe.config file in your favorite text editor. Don't change the keys, just the values.
 
-  * LOCAL_ROOT = the directory you want to use to cache info from theTvDb.com (don't change unless necessary).
-  * WATCH_FOLDER = the folder you want series-watcher to watch (should probably only contain files for TV series).
-  * MOVE_FOLDER = the root folder you want to move your files to after renaming.
+  * `LOCAL_ROOT` = the directory you want to use to cache info from theTvDb.com (don't change unless necessary).
+  * `WATCH_FOLDER` = the folder you want series-watcher to watch (should probably only contain files for TV series).
+  * `MOVE_FOLDER` = the root folder you want to move your files to after renaming.
+  * `MKVMERGE` = the full path to mkvmerge.exe
+  * `CONVERT_TO_MKV` = `true` or `false` to convert the file to mkv format when it moves to the `MOVE_FOLDER`
 
 series-watcher supports the following formats for TV shows in the WATCH_FOLDER:
 {{{
